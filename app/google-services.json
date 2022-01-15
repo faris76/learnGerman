@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "125858518952",
+    "project_id": "learn-german-a75db",
+    "storage_bucket": "learn-german-a75db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:125858518952:android:d9838876d5a18501c1ef9d",
+        "android_client_info": {
+          "package_name": "com.example.android.learngerman"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "125858518952-9s6ff5i95b9scn7ld7es96kcim9c7030.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaJF29NnA5mI0z5VkuWvvZmZsta1Gbe5o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "125858518952-9s6ff5i95b9scn7ld7es96kcim9c7030.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
