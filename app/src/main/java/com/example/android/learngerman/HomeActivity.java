@@ -23,6 +23,7 @@ public class HomeActivity extends AppCompatActivity {
     private View decorView;
     ImageButton logoutBtn;
     RelativeLayout greetings, numbers, family, phrases;
+    Button greetingButton;
     float v = 0;
 
     @Override
@@ -44,9 +45,15 @@ public class HomeActivity extends AppCompatActivity {
         family = findViewById(R.id.familyTab);
         phrases = findViewById(R.id.phrasesTab);
 
+        greetingButton = findViewById(R.id.greetings_btn);
+
 
         logoutBtn.setOnClickListener(v -> {
             logoutUser();
+        });
+
+        greetingButton.setOnClickListener(v ->{
+            startActivity(new Intent(this,Greetings.class));
         });
 
         startAnimation();
