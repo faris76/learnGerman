@@ -17,9 +17,10 @@ public class HomeActivity extends AppCompatActivity {
 
     private View decorView;
     ImageButton logoutBtn;
-    RelativeLayout greetings, numbers, family, days,phrases;
+    RelativeLayout greetings, numbers, family, days;
     Button greetingButton,numbersButton,familyButton,daysButton,bodyPartsButton
-            , vegetablesButton ,fruitsButton;
+            , vegetablesButton ,fruitsButton,groceriesButton,clothesButton
+            ,electronicsButton,phrasesButton;
     float v = 0;
 
     @Override
@@ -39,7 +40,6 @@ public class HomeActivity extends AppCompatActivity {
         greetings = findViewById(R.id.greetingsTab);
         numbers = findViewById(R.id.numbersTab);
         family = findViewById(R.id.familyTab);
-        phrases = findViewById(R.id.phrasesTab);
         days = findViewById(R.id.daysAndMonthsTab);
 
         greetingButton = findViewById(R.id.greetings_btn);
@@ -49,6 +49,10 @@ public class HomeActivity extends AppCompatActivity {
         bodyPartsButton = findViewById(R.id.bodyParts_btn);
         vegetablesButton = findViewById(R.id.vegetable_btn);
         fruitsButton = findViewById(R.id.fruits_btn);
+        groceriesButton = findViewById(R.id.grocery_btn);
+        clothesButton= findViewById(R.id.clothes_btn);
+        electronicsButton= findViewById(R.id.electronics_btn);
+        phrasesButton= findViewById(R.id.phrases_btn);
 
 
         logoutBtn.setOnClickListener(v -> logoutUser());
@@ -66,6 +70,10 @@ public class HomeActivity extends AppCompatActivity {
         vegetablesButton.setOnClickListener(v -> startActivity(new Intent(this,Vegetables.class)));
 
         fruitsButton.setOnClickListener(v -> startActivity(new Intent(this,Fruits.class)));
+
+        groceriesButton.setOnClickListener(v -> startActivity(new Intent(this,Groceries.class)));
+
+        clothesButton.setOnClickListener(v -> startActivity(new Intent(this,Groceries.class)));
 
         startAnimation();
     }

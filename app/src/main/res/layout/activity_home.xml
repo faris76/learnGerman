@@ -58,7 +58,8 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
                     android:fontFamily="@font/baloo"
                     android:padding="25dp"
                     android:text="@string/greetings"
@@ -104,8 +105,10 @@
                 android:background="@drawable/black_bg">
 
                 <TextView
+
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
                     android:fontFamily="@font/baloo"
                     android:padding="25dp"
                     android:text="@string/numbers"
@@ -153,7 +156,8 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
                     android:fontFamily="@font/baloo"
                     android:padding="25dp"
                     android:text="@string/family"
@@ -201,7 +205,8 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
                     android:fontFamily="@font/baloo"
                     android:padding="25dp"
                     android:text="Days &amp; Months"
@@ -249,7 +254,8 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
                     android:fontFamily="@font/baloo"
                     android:padding="25dp"
                     android:text="Body Parts"
@@ -297,7 +303,8 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
                     android:fontFamily="@font/baloo"
                     android:padding="25dp"
                     android:text="Vegetable"
@@ -345,7 +352,8 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
                     android:fontFamily="@font/baloo"
                     android:padding="25dp"
                     android:text="Fruits"
@@ -378,6 +386,150 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/groceryTab"
+            android:layout_width="match_parent"
+            android:layout_height="190dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/orange_bg">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:fontFamily="@font/baloo"
+                    android:padding="25dp"
+                    android:text="Groceries"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/grocery_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#00000000"
+                    android:clickable="true"
+                    android:fontFamily="@font/brandon_grotesque_black"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:padding="20dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/grocery" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/clothesTab"
+            android:layout_width="match_parent"
+            android:layout_height="190dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/round_bk5">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:fontFamily="@font/baloo"
+                    android:padding="25dp"
+                    android:text="Clothes"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/clothes_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#00000000"
+                    android:clickable="true"
+                    android:fontFamily="@font/brandon_grotesque_black"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:padding="20dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/clothes" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/electronicsTab"
+            android:layout_width="match_parent"
+            android:layout_height="190dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/black_bg">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:fontFamily="@font/baloo"
+                    android:padding="25dp"
+                    android:text="Electronics"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/electronics_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#00000000"
+                    android:clickable="true"
+                    android:fontFamily="@font/brandon_grotesque_black"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:padding="20dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/electronics" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:id="@+id/phrasesTab"
             android:layout_width="match_parent"
             android:layout_height="190dp">
@@ -393,7 +545,8 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
                     android:fontFamily="@font/baloo"
                     android:padding="25dp"
                     android:text="@string/phrases"
@@ -401,6 +554,7 @@
                     android:textStyle="bold" />
 
                 <Button
+                    android:id="@+id/phrases_btn"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:layout_alignParentBottom="true"

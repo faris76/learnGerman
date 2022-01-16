@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnGerman">
         <activity
+            android:name=".Groceries"
+            android:exported="false" />
+        <activity
             android:name=".Fruits"
             android:exported="false" />
         <activity
