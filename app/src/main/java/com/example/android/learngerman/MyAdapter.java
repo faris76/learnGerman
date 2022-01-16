@@ -4,10 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -26,6 +29,8 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Model, MyAdapter.MyViewHo
     @Override
     protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull Model model) {
 
+        Animation animation = AnimationUtils.loadAnimation(holder.itemView.getContext(),android.R.anim.slide_in_left);
+
         holder.german.setText(model.getGerman());
         holder.english.setText(model.getEnglish());
         holder.play.setImageResource(R.drawable.ic_play);
@@ -41,6 +46,8 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Model, MyAdapter.MyViewHo
         holder.english.setOnClickListener(v -> {
             speakGerman(Objects.requireNonNull(holder).german.getText().toString());
         });
+
+        holder.itemView.startAnimation(animation);
     }
 
     @NonNull

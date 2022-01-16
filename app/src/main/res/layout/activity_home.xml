@@ -29,12 +29,14 @@
 
             <ImageButton
                 android:id="@+id/logout_btn"
-                android:background="#00000000"
-                android:padding="10dp"
-                android:layout_alignParentRight="true"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/ic_logout"/>
+                android:layout_alignParentRight="true"
+                android:background="#00000000"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="10dp"
+                android:src="@drawable/ic_logout" />
 
         </RelativeLayout>
 
@@ -68,7 +70,9 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
+                    android:clickable="true"
                     android:fontFamily="@font/brandon_grotesque_black"
+                    android:foreground="?android:attr/selectableItemBackground"
                     android:padding="20dp"
                     android:text="@string/expand_all"
                     android:textColor="#AB0F0F0F"
@@ -110,11 +114,14 @@
                     android:textStyle="bold" />
 
                 <Button
+                    android:id="@+id/numbers_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
+                    android:clickable="true"
                     android:fontFamily="@font/brandon_grotesque_black"
+                    android:foreground="?android:attr/selectableItemBackground"
                     android:padding="20dp"
                     android:text="@string/expand_all"
                     android:textColor="@color/white"
@@ -160,7 +167,9 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
+                    android:clickable="true"
                     android:fontFamily="@font/brandon_grotesque_black"
+                    android:foreground="?android:attr/selectableItemBackground"
                     android:padding="20dp"
                     android:text="@string/expand_all"
                     android:textColor="@color/white"
@@ -185,7 +194,10 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:layout_margin="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/round_bk2">
 
                 <TextView
@@ -202,7 +214,9 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
+                    android:clickable="true"
                     android:fontFamily="@font/brandon_grotesque_black"
+                    android:foreground="?android:attr/selectableItemBackground"
                     android:padding="20dp"
                     android:text="@string/expand_all"
                     android:textColor="#AB0F0F0F"

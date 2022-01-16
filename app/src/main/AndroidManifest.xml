@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnGerman">
         <activity
+            android:name=".Numbers"
+            android:exported="false" />
+        <activity
             android:name=".Greetings"
             android:exported="false" />
         <activity
