@@ -34,7 +34,7 @@ public class Fruits extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         options = new FirebaseRecyclerOptions.Builder<Model>()
-                .setQuery(FirebaseDatabase.getInstance().getReference().child("categories").child("vegetables"), Model.class)
+                .setQuery(FirebaseDatabase.getInstance().getReference().child("categories").child("fruits"), Model.class)
                 .build();
 
         adapter = new MyAdapter(options, this);

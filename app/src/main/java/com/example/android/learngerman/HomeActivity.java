@@ -19,7 +19,7 @@ public class HomeActivity extends AppCompatActivity {
     ImageButton logoutBtn;
     RelativeLayout greetings, numbers, family, days,phrases;
     Button greetingButton,numbersButton,familyButton,daysButton,bodyPartsButton
-            , vegetablesButton;
+            , vegetablesButton ,fruitsButton;
     float v = 0;
 
     @Override
@@ -48,6 +48,7 @@ public class HomeActivity extends AppCompatActivity {
         daysButton = findViewById(R.id.days_btn);
         bodyPartsButton = findViewById(R.id.bodyParts_btn);
         vegetablesButton = findViewById(R.id.vegetable_btn);
+        fruitsButton = findViewById(R.id.fruits_btn);
 
 
         logoutBtn.setOnClickListener(v -> logoutUser());
@@ -63,6 +64,8 @@ public class HomeActivity extends AppCompatActivity {
         bodyPartsButton.setOnClickListener(v -> startActivity(new Intent(this,BodyParts.class)));
 
         vegetablesButton.setOnClickListener(v -> startActivity(new Intent(this,Vegetables.class)));
+
+        fruitsButton.setOnClickListener(v -> startActivity(new Intent(this,Fruits.class)));
 
         startAnimation();
     }
