@@ -11,6 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnGerman">
         <activity
+            android:name=".Fruits"
+            android:exported="false" />
+        <activity
+            android:name=".Vegetables"
+            android:exported="false" />
+        <activity
             android:name=".BodyParts"
             android:exported="false" />
         <activity

@@ -67,15 +67,14 @@
 
                 <Button
                     android:id="@+id/greetings_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:clickable="true"
                     android:fontFamily="@font/brandon_grotesque_black"
                     android:foreground="?android:attr/selectableItemBackground"
                     android:padding="20dp"
-                    android:text="@string/expand_all"
                     android:textColor="#AB0F0F0F"
                     android:textStyle="bold" />
 
@@ -116,15 +115,14 @@
 
                 <Button
                     android:id="@+id/numbers_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:clickable="true"
                     android:fontFamily="@font/brandon_grotesque_black"
                     android:foreground="?android:attr/selectableItemBackground"
                     android:padding="20dp"
-                    android:text="@string/expand_all"
                     android:textColor="@color/white"
                     android:textStyle="bold" />
 
@@ -165,15 +163,14 @@
 
                 <Button
                     android:id="@+id/family_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:clickable="true"
                     android:fontFamily="@font/brandon_grotesque_black"
                     android:foreground="?android:attr/selectableItemBackground"
                     android:padding="20dp"
-                    android:text="@string/expand_all"
                     android:textColor="@color/white"
                     android:textStyle="bold" />
 
@@ -214,15 +211,14 @@
 
                 <Button
                     android:id="@+id/days_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:clickable="true"
                     android:fontFamily="@font/brandon_grotesque_black"
                     android:foreground="?android:attr/selectableItemBackground"
                     android:padding="20dp"
-                    android:text="@string/expand_all"
                     android:textColor="@color/white"
                     android:textStyle="bold" />
 
@@ -263,15 +259,14 @@
 
                 <Button
                     android:id="@+id/bodyParts_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:clickable="true"
                     android:fontFamily="@font/brandon_grotesque_black"
                     android:foreground="?android:attr/selectableItemBackground"
                     android:padding="20dp"
-                    android:text="@string/expand_all"
                     android:textColor="@color/white"
                     android:textStyle="bold" />
 
@@ -283,6 +278,102 @@
                 android:layout_height="150dp"
                 android:layout_alignParentEnd="true"
                 android:src="@drawable/human" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/vegetableTab"
+            android:layout_width="match_parent"
+            android:layout_height="190dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/green_bg">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/baloo"
+                    android:padding="25dp"
+                    android:text="Vegetable"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/vegetable_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#00000000"
+                    android:clickable="true"
+                    android:fontFamily="@font/brandon_grotesque_black"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:padding="20dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/vegetables" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fruitsTab"
+            android:layout_width="match_parent"
+            android:layout_height="190dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/purple_bg">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/baloo"
+                    android:padding="25dp"
+                    android:text="Fruits"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/fruits_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#00000000"
+                    android:clickable="true"
+                    android:fontFamily="@font/brandon_grotesque_black"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:padding="20dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/fruit" />
 
         </RelativeLayout>
 
@@ -310,15 +401,14 @@
                     android:textStyle="bold" />
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:clickable="true"
                     android:fontFamily="@font/brandon_grotesque_black"
                     android:foreground="?android:attr/selectableItemBackground"
                     android:padding="20dp"
-                    android:text="@string/expand_all"
                     android:textColor="#AB0F0F0F"
                     android:textStyle="bold" />
 

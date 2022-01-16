@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Greetings">
+    tools:context=".Vegetables">
 
     <RelativeLayout
+        android:layout_marginTop="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/title"
@@ -18,9 +18,9 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/brandon_grotesque_black"
             android:padding="10dp"
-            android:text="Greetings"
+            android:text="Vegetables"
             android:textAllCaps="true"
-            android:textColor="#FFC107"
+            android:textColor="#147818"
             android:textSize="30sp" />
 
         <ImageButton
@@ -37,7 +37,7 @@
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/greetingsList"
+        android:id="@+id/vegetableList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="10dp" />
