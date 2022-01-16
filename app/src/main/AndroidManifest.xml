@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnGerman">
         <activity
+            android:name=".BodyParts"
+            android:exported="false" />
+        <activity
             android:name=".DaysAndMonths"
             android:exported="false" />
         <activity

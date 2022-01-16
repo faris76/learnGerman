@@ -1,19 +1,14 @@
 package com.example.android.learngerman;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -23,7 +18,7 @@ public class HomeActivity extends AppCompatActivity {
     private View decorView;
     ImageButton logoutBtn;
     RelativeLayout greetings, numbers, family, days,phrases;
-    Button greetingButton,numbersButton,familyButton,daysButton;
+    Button greetingButton,numbersButton,familyButton,daysButton,bodyPartsButton;
     float v = 0;
 
     @Override
@@ -50,27 +45,20 @@ public class HomeActivity extends AppCompatActivity {
         numbersButton = findViewById(R.id.numbers_btn);
         familyButton = findViewById(R.id.family_btn);
         daysButton = findViewById(R.id.days_btn);
+        bodyPartsButton = findViewById(R.id.bodyParts_btn);
 
 
-        logoutBtn.setOnClickListener(v -> {
-            logoutUser();
-        });
+        logoutBtn.setOnClickListener(v -> logoutUser());
 
-        greetingButton.setOnClickListener(v ->{
-            startActivity(new Intent(this,Greetings.class));
-        });
+        greetingButton.setOnClickListener(v -> startActivity(new Intent(this,Greetings.class)));
 
-        numbersButton.setOnClickListener(v ->{
-            startActivity(new Intent(this,Numbers.class));
-        });
+        numbersButton.setOnClickListener(v -> startActivity(new Intent(this,Numbers.class)));
 
-        familyButton.setOnClickListener(v ->{
-            startActivity(new Intent(this,Family.class));
-        });
+        familyButton.setOnClickListener(v -> startActivity(new Intent(this,Family.class)));
 
-        daysButton.setOnClickListener(v ->{
-            startActivity(new Intent(this,DaysAndMonths.class));
-        });
+        daysButton.setOnClickListener(v -> startActivity(new Intent(this,DaysAndMonths.class)));
+
+        bodyPartsButton.setOnClickListener(v -> startActivity(new Intent(this,BodyParts.class)));
 
         startAnimation();
     }
@@ -81,7 +69,6 @@ public class HomeActivity extends AppCompatActivity {
         finish();
         startActivity(new Intent(getApplicationContext(), LoginActivity.class));
     }
-
 
     private void startAnimation() {
         greetings.setTranslationX(800);
@@ -99,7 +86,6 @@ public class HomeActivity extends AppCompatActivity {
         family.animate().translationX(0).alpha(1).setDuration(800).setStartDelay(700).start();
         days.animate().translationX(0).alpha(1).setDuration(800).setStartDelay(800).start();
     }
-
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
