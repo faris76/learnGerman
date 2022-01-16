@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Learn German</string>
     <string name="expand_all">Expand All</string>
+    <string name="categories">Categories</string>
+    <string name="greetings">Greetings</string>
+    <string name="numbers">Numbers</string>
+    <string name="family">Family</string>
+    <string name="phrases">Phrases</string>
+    <string name="image_for_back_button">Image For back Button</string>
 </resources>

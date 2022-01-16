@@ -22,8 +22,8 @@ public class HomeActivity extends AppCompatActivity {
 
     private View decorView;
     ImageButton logoutBtn;
-    RelativeLayout greetings, numbers, family, phrases;
-    Button greetingButton,numbersButton;
+    RelativeLayout greetings, numbers, family, days,phrases;
+    Button greetingButton,numbersButton,familyButton,daysButton;
     float v = 0;
 
     @Override
@@ -44,9 +44,12 @@ public class HomeActivity extends AppCompatActivity {
         numbers = findViewById(R.id.numbersTab);
         family = findViewById(R.id.familyTab);
         phrases = findViewById(R.id.phrasesTab);
+        days = findViewById(R.id.daysAndMonthsTab);
 
         greetingButton = findViewById(R.id.greetings_btn);
         numbersButton = findViewById(R.id.numbers_btn);
+        familyButton = findViewById(R.id.family_btn);
+        daysButton = findViewById(R.id.days_btn);
 
 
         logoutBtn.setOnClickListener(v -> {
@@ -59,6 +62,14 @@ public class HomeActivity extends AppCompatActivity {
 
         numbersButton.setOnClickListener(v ->{
             startActivity(new Intent(this,Numbers.class));
+        });
+
+        familyButton.setOnClickListener(v ->{
+            startActivity(new Intent(this,Family.class));
+        });
+
+        daysButton.setOnClickListener(v ->{
+            startActivity(new Intent(this,DaysAndMonths.class));
         });
 
         startAnimation();
@@ -76,17 +87,17 @@ public class HomeActivity extends AppCompatActivity {
         greetings.setTranslationX(800);
         numbers.setTranslationX(800);
         family.setTranslationX(800);
-        phrases.setTranslationX(800);
+        days.setTranslationX(800);
 
         greetings.setAlpha(v);
         numbers.setAlpha(v);
         family.setAlpha(v);
-        phrases.setAlpha(v);
+        days.setAlpha(v);
 
         greetings.animate().translationX(0).alpha(1).setDuration(800).setStartDelay(300).start();
         numbers.animate().translationX(0).alpha(1).setDuration(800).setStartDelay(500).start();
         family.animate().translationX(0).alpha(1).setDuration(800).setStartDelay(700).start();
-        phrases.animate().translationX(0).alpha(1).setDuration(800).setStartDelay(800).start();
+        days.animate().translationX(0).alpha(1).setDuration(800).setStartDelay(800).start();
     }
 
 

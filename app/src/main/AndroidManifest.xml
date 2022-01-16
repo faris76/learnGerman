@@ -11,6 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnGerman">
         <activity
+            android:name=".DaysAndMonths"
+            android:exported="false" />
+        <activity
+            android:name=".Family"
+            android:exported="false" />
+        <activity
             android:name=".Numbers"
             android:exported="false" />
         <activity
