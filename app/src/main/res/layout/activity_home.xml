@@ -484,7 +484,7 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/electronicsTab"
+            android:id="@+id/homeAppliancesTab"
             android:layout_width="match_parent"
             android:layout_height="190dp">
 
@@ -500,13 +500,13 @@
                     android:gravity="center"
                     android:fontFamily="@font/baloo"
                     android:padding="25dp"
-                    android:text="Electronics"
+                    android:text="Home \nAppliances"
                     android:textColor="@color/white"
                     android:textSize="30sp"
                     android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/electronics_btn"
+                    android:id="@+id/homeAppliances_btn"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:layout_alignParentBottom="true"
@@ -525,7 +525,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_alignParentEnd="true"
-                android:src="@drawable/electronics" />
+                android:src="@drawable/home_appliences" />
 
         </RelativeLayout>
 

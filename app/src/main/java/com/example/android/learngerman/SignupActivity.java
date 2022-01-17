@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
@@ -25,25 +26,11 @@ public class SignupActivity extends AppCompatActivity {
     FloatingActionButton fb,insta,twitter,linkedin;
     EditText email_et,pass_et;
     float v = 0;
+    final int MIN_PASSWORD_LENGTH = 6;
 
     private View decorView;
 
-    @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-        if (hasFocus){
-            decorView.setSystemUiVisibility(hideSystemBars());
-        }
-    }
 
-    private int hideSystemBars(){
-        return View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,15 +76,45 @@ public class SignupActivity extends AppCompatActivity {
         FirebaseAuth mAuth;
         mAuth = FirebaseAuth.getInstance();
 
-        String email = email_et.getText().toString();
-        String password = pass_et.getText().toString();
+        String email = email_et.getText().toString().trim();
+        String password = pass_et.getText().toString().trim();
+
+        /*if email field is empty it will through an error
+          asking the user to enter the email */
+
+        if (email.isEmpty()){
+            email_et.setError("Email is required!");
+            email_et.requestFocus();
+            return;
+        }
+
+        /*if email is not valid through an exception */
+
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            email_et.setError("Please provide a valid email");
+            email_et.requestFocus();
+            return;
+        }
+
+        if (password.isEmpty()){
+            pass_et.setError("Password is required");
+            pass_et.requestFocus();
+            return;
+        }
+
+        if (password.length() < MIN_PASSWORD_LENGTH){
+            pass_et.setError("Min password length should be " +MIN_PASSWORD_LENGTH+ " characters!");
+            pass_et.requestFocus();
+            return;
+        }
+
 
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
                         // Sign in success, update UI with the signed-in user's information
                         clear();
-                        Toast.makeText(getApplicationContext(), "User Added Successfully", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "User registered successfully", Toast.LENGTH_SHORT).show();
                     } else {
                         // If sign in fails, display a message to the user.
                         Toast.makeText(getApplicationContext(), "Signup Failed", Toast.LENGTH_SHORT).show();
@@ -156,5 +173,22 @@ public class SignupActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus){
+            decorView.setSystemUiVisibility(hideSystemBars());
+        }
+    }
+
+    private int hideSystemBars(){
+        return View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
     }
 }

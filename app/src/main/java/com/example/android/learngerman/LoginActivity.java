@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
@@ -20,29 +21,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
-    TextView forgotPassword,login,signUp;
-    RelativeLayout emailEditText,passEditText;
-    FloatingActionButton fb,insta,twitter,linkedin;
-    EditText emailEt,passEt;
+    TextView forgotPassword, login, signUp;
+    RelativeLayout emailEditText, passEditText;
+    FloatingActionButton fb, insta, twitter, linkedin;
+    EditText emailEt, passEt;
     float v = 0;
     private View decorView;
-
-    @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-        if (hasFocus){
-            decorView.setSystemUiVisibility(hideSystemBars());
-        }
-    }
-
-    private int hideSystemBars(){
-        return View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
-    }
+    final int MIN_PASSWORD_LENGTH = 6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             // User is signed in
-            Intent i = new Intent(LoginActivity.this,HomeActivity.class);
+            Intent i = new Intent(LoginActivity.this, HomeActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
         }
@@ -80,41 +65,67 @@ public class LoginActivity extends AppCompatActivity {
         passEt = findViewById(R.id.pass);
 
         // Click Listeners
-        signUp.setOnClickListener(v ->{
-            startActivity(new Intent(this,SignupActivity.class));
+        signUp.setOnClickListener(v -> {
+            startActivity(new Intent(this, SignupActivity.class));
         });
 
-        login.setOnClickListener(v ->{
+        login.setOnClickListener(v -> {
             loginUser();
         });
 
         startAnimation();
     }
 
-    private void loginUser(){
+    private void loginUser() {
         FirebaseAuth mAuth;
         mAuth = FirebaseAuth.getInstance();
 
-        String email = emailEt.getText().toString();
-        String password = passEt.getText().toString();
+        String email = emailEt.getText().toString().trim();
+        String password = passEt.getText().toString().trim();
+
+        /*if email field is empty it will through an error
+          asking the user to enter the email */
+
+        if (email.isEmpty()) {
+            emailEt.setError("Email is required!");
+            emailEt.requestFocus();
+            return;
+        }
+
+        /*if email is not valid through an exception */
+
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            emailEt.setError("Please provide a valid email");
+            emailEt.requestFocus();
+            return;
+        }
+
+        if (password.isEmpty()) {
+            passEt.setError("Password is required");
+            passEt.requestFocus();
+            return;
+        }
+
+        if (password.length() < MIN_PASSWORD_LENGTH) {
+            passEt.setError("Min password length should be " + MIN_PASSWORD_LENGTH + " characters!");
+            passEt.requestFocus();
+            return;
+        }
 
         mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            finish();
-                            startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Toast.makeText(getApplicationContext(), "failed", Toast.LENGTH_SHORT).show();
-                        }
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        // Sign in success, update UI with the signed-in user's information
+                        finish();
+                        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Toast.makeText(getApplicationContext(), "Wrong Email or Password", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
 
-    private void startAnimation(){
+    private void startAnimation() {
         //for animation
         fb.setTranslationY(300);
         insta.setTranslationY(300);
@@ -136,7 +147,6 @@ public class LoginActivity extends AppCompatActivity {
         signUp.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(1000).start();
 
 
-
         //###########################################################################################
 
         forgotPassword.setTranslationX(800);
@@ -156,5 +166,22 @@ public class LoginActivity extends AppCompatActivity {
         forgotPassword.animate().translationX(0).alpha(1).setDuration(800).setStartDelay(500).start();
         login.animate().translationX(0).alpha(1).setDuration(800).setStartDelay(800).start();
 
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus) {
+            decorView.setSystemUiVisibility(hideSystemBars());
+        }
+    }
+
+    private int hideSystemBars() {
+        return View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
     }
 }

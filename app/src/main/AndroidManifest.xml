@@ -11,6 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnGerman">
         <activity
+            android:name=".HomeAppliances"
+            android:exported="false" />
+        <activity
+            android:name=".Clothes"
+            android:exported="false" />
+        <activity
             android:name=".Groceries"
             android:exported="false" />
         <activity

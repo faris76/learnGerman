@@ -20,7 +20,7 @@ public class HomeActivity extends AppCompatActivity {
     RelativeLayout greetings, numbers, family, days;
     Button greetingButton,numbersButton,familyButton,daysButton,bodyPartsButton
             , vegetablesButton ,fruitsButton,groceriesButton,clothesButton
-            ,electronicsButton,phrasesButton;
+            ,homeAppliancesButton,phrasesButton;
     float v = 0;
 
     @Override
@@ -51,7 +51,7 @@ public class HomeActivity extends AppCompatActivity {
         fruitsButton = findViewById(R.id.fruits_btn);
         groceriesButton = findViewById(R.id.grocery_btn);
         clothesButton= findViewById(R.id.clothes_btn);
-        electronicsButton= findViewById(R.id.electronics_btn);
+        homeAppliancesButton= findViewById(R.id.homeAppliances_btn);
         phrasesButton= findViewById(R.id.phrases_btn);
 
 
@@ -73,7 +73,9 @@ public class HomeActivity extends AppCompatActivity {
 
         groceriesButton.setOnClickListener(v -> startActivity(new Intent(this,Groceries.class)));
 
-        clothesButton.setOnClickListener(v -> startActivity(new Intent(this,Groceries.class)));
+        clothesButton.setOnClickListener(v -> startActivity(new Intent(this,Clothes.class)));
+
+        homeAppliancesButton.setOnClickListener(v -> startActivity(new Intent(this,HomeAppliances.class)));
 
         startAnimation();
     }
