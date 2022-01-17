@@ -530,6 +530,52 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/furnitureTab"
+            android:layout_width="match_parent"
+            android:layout_height="190dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/dark_blue_bg">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:fontFamily="@font/baloo"
+                    android:padding="25dp"
+                    android:text="Furniture"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/furniture_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#00000000"
+                    android:clickable="true"
+                    android:fontFamily="@font/brandon_grotesque_black"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:padding="20dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/furniture" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:id="@+id/phrasesTab"
             android:layout_width="match_parent"
             android:layout_height="190dp">
